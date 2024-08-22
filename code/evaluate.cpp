@@ -55,12 +55,12 @@ void evaluateWords(const std::string& wordBankFile, const int numWords)
         crt.score += score;
         q.push(crt);
     }
-    printf("FINISHED\n");
+    printf("FINISHED!!\n");
 
     while (!q.empty()) {
         int adds = 1;
-        q.top().show();
-        if (q.top().score > 999)
+        printf("%s: %d times\n", q.top().word.c_str(), q.top().times);
+        if (q.top().score > 200)
             adds = 100;
         wordBank[q.top().word]["time"] = int(wordBank[q.top().word]["time"]) + adds;
         q.pop();
